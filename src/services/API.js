@@ -7,4 +7,4 @@ const getCoin = async () => {
     return response.data;
 }
 
-export default getCoin;
+export {getCoin};
