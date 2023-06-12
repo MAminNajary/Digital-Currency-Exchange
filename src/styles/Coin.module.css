@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 850px;
+    background-color: rgb(4, 34, 129);
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container img{
+    width: 50px;
+    height: 50px;
+}
+
+.greenPrice {
+    color: rgb(0, 204, 0);
+}
+.redPrice {
+    color: red;
+}
+
+
+/* mediaquery */
+
+@media (max-width: 924px) {
+    .container {
+        width: calc(100% - 20px);
+        
+    }
+    
+}
+@media (max-width: 500px) {
+    .container img{
+        width: 30px;
+        height: 30px;
+    }
+    .container span{
+        font-size: 10px;
+    }
+    
+}
