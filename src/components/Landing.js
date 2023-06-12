@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 
 
 // API
@@ -7,6 +7,9 @@ import { getCoin } from '../services/API';
 // components
 import Loader from './Loader';
 import Coin from './Coin';
+
+// styles
+import styles from '../styles/Landing.module.css';
 
 const Landing = () => {
 
@@ -30,8 +33,8 @@ const Landing = () => {
 
 
     return (
-        <>
-            <input type='text' placeholder='Search ...' value={search} onChange={searchHandler} />
+        <div className={styles.body}>
+            <input className={styles.input} type='text' placeholder='Search ...' value={search} onChange={searchHandler} />
             {coins.length ? 
             <div>
                 {searchedCoins.map(coin => <Coin
@@ -41,16 +44,12 @@ const Landing = () => {
                     symbol={coin.symbol}
                     price={coin.current_price}
                     marketCap={coin.market_cap}
-                    priceChange={coin.price_change_percentage_24h}
+                    priceChange={coin.price_change_percentage_24h.toFixed(2)}
                 />)}
             </div>
             : <Loader />}
             
-            
-
-            
-            
-        </>
+        </div>
     );
 };
 
